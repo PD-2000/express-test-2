@@ -1,2 +1,35 @@
-<h2>Contact</h2>
-<p>Send me an email at programmer@example.com</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Contact</title>
+  </head>
+  <body>
+    <h2>Contact me</h2>
+    <div class="{{isSent}}">
+      {{#if isSent}}
+        <p>The message has been sent!</p>
+      {{/if}}
+    </div>
+    <div class="{{isError}}">
+      {{#if isError}}
+        <p>You can't leave fields empty!</p>
+      {{/if}}
+    </div>
+    <form action="/contact/send-message" method="POST">
+      <label>
+        Your name: <input type="text" name="author">
+      </label>
+      <label>
+        Your email: <input type="email" name="sender">
+      </label>
+      <label>
+        Title: <input type="text" name="title">
+      </label>
+      <label>
+        Message: <textarea name="message"></textarea>
+      </label>
+      <button type="submit">Send message</button>
+    </form>
+  </body>
+</html>
