@@ -17,7 +17,7 @@
         You can't leave fields empty!
       </div>
     {{/if}}
-    <form action="/contact/send-message" method="POST">
+    <form action="/contact/send-message" enctype="multipart/form-data" method="POST">
       <label>
         Your name: <input type="text" name="author">
       </label>
